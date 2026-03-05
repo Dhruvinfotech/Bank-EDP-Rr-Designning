@@ -21,4 +21,8 @@ function Login() {          // ← FIXED: was 'login' (lowercase), must be 'Logi
   );
 }
 
+<<<<<<< HEAD
 export default Login;       // ← Already correct ✅
+=======
+export default Login;       // ← Already correct ✅
+>>>>>>> 8fc3274c8c0d83026b20b071017be7b98cd57c89
