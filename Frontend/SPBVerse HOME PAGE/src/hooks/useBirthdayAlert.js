@@ -18,4 +18,9 @@ function useBirthdayAlert() {
 
   return birthdays;
 }
+const [birthdays, setBirthdays] = useState([
+  { id: 1, name: "Dhruv", color: "#FF6B6B" }, // Red
+  { id: 2, name: "Special Guest", color: "#4D96FF" }, // Blue
+  { id: 3, name: "Bank Staff", color: "#2ECC71" } // Green
+]);
 export default useBirthdayAlert;
