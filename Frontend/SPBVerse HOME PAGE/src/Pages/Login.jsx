@@ -1,23 +1,39 @@
-import { useNavigate } from "react-router-dom";
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  const [credentials, setCredentials] = useState({ userid: '', password: '' });
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
-    
-    // Example logic: In a real app, this comes from your API response
-    const userRole = "EDP_ADMIN"; 
-
-    if (userRole === "EDP_ADMIN") {
-      navigate("/edp-dashboard"); // Redirect to your IT management page
+    // Logic for Bank EDP Role-based access
+    if (credentials.userid === 'admin') {
+      navigate('/clerk');
     } else {
-      navigate("/home"); // Redirect to standard customer home page
+      alert("Invalid Credentials for EDP System");
     }
   };
 
   return (
-    // Your Figma-inspired Login UI here
-    <button onClick={handleLogin}>Secure Login</button>
+    <div className="login-container">
+      <h2>Bank EDP - Secure Login</h2>
+      <form onSubmit={handleLogin}>
+        <input 
+          type="text" 
+          placeholder="User ID" 
+          onChange={(e) => setCredentials({...credentials, userid: e.target.value})} 
+        />
+        <input 
+          type="password" 
+          placeholder="Password" 
+          onChange={(e) => setCredentials({...credentials, password: e.target.value})} 
+        />
+        <button type="submit">Login to System</button>
+      </form>
+    </div>
   );
 };
+
+// This line fixes the "default is not exported" error!
+export default Login;
