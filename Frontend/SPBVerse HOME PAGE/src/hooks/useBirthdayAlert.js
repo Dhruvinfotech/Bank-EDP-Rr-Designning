@@ -23,4 +23,22 @@ const [birthdays, setBirthdays] = useState([
   { id: 2, name: "Special Guest", color: "#4D96FF" }, // Blue
   { id: 3, name: "Bank Staff", color: "#2ECC71" } // Green
 ]);
+
+function BirthdayWidget() {
+  // Comment this out for a second
+  // const birthdays = useBirthdayAlert(); 
+  const birthdays = [{ id: 1, name: "Test User", color: "#FF6B6B" }]; 
+
+  return (
+    <div>
+      {birthdays.map(person => (
+        <BirthdayCard key={person.id} name={person.name} color={person.color} />
+      ))}
+    </div>
+  );
+}
+const [birthdays, setBirthdays] = useState([
+  { id: 1, name: "Dhruv", color: "#FF6B6B" },
+  { id: 2, name: "Special Member", color: "#4D96FF" }
+]);
 export default useBirthdayAlert;
