@@ -1,15 +1,12 @@
 import { Routes, Route } from "react-router-dom";
-HEAD
-import Login from "./Pages/Login";           // ← 'pages' lowercase
-import ClerkDashboard from "./Pages/ClerkDashboard";  // ← FIXED: was './Pages/' (capital P)
-import Login from "./Pages/Login";              // ← FIXED: capital P
-import ClerkDashboard from "./Pages/ClerkDashboard";  // ← already correct ✅
+import Login from "./Pages/Login";
+import ClerkDashboard from "./Pages/ClerkDashboard";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<Login />} />
-      <Route path="/dashboard" element={<ClerkDashboard />} />
+      <Route path="/clerk" element={<ClerkDashboard />} />
     </Routes>
   );
 }
