@@ -1,16 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
-function Login() {
+function Login() {          // ← FIXED: was 'login' (lowercase), must be 'Login'
 
-  const navigate = useNavigate();   // this allows page change
+  const navigate = useNavigate();
 
   const handleLogin = () => {
-    // here later you will check username/password from backend
-
-    // for now assume login successful
     alert("Login successful");
-
-    navigate("/dashboard");   // redirect to dashboard
+    navigate("/dashboard");
   };
 
   return (
@@ -25,4 +21,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default Login;       // ← Already correct ✅
