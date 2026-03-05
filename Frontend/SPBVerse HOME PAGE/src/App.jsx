@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import ClerkDashboard from "./Pages/ClerkDashboard";
+import Login from "./Pages/Login";              // ← FIXED: capital P
+import ClerkDashboard from "./Pages/ClerkDashboard";  // ← already correct ✅
 
 function App() {
   return (
